@@ -1,0 +1,111 @@
+/* Базові скидання та шрифти */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333333;
+  background-color: #f7f7f7;
+}
+
+/* Блочна модель контейнера */
+.container {
+  max-width: 1170px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Контейнер Варіанту 3 */
+#featured_container {
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  background-color: transparent;
+}
+
+/* Сітка для карток */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 20px;
+}
+
+.views-col {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 50%;
+}
+
+@media (max-width: 768px) {
+  .views-col {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
+/* Стилізація кожної картки новини */
+.views-col > div > span > a {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  border-radius: 4px;
+  background-color: #2e3192;
+}
+
+.img-responsive {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.views-col a:hover .img-responsive {
+  transform: scale(1.03);
+}
+
+/* Напівпрозорий градієнт для читабельності тексту поверх картинки */
+.shadow_featured {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.85) 100%);
+  pointer-events: none;
+}
+
+/* Заголовки всередині карток */
+.views-col h2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 16px 20px;
+  z-index: 2;
+}
+
+.views-col h2 span {
+  font-family: "Roboto Condensed", "Roboto", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+.views-col a:hover h2 span {
+  color: #f7a800;
+}

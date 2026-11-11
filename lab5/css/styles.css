@@ -1,4 +1,12 @@
-* {
+/* ==========================================================================
+   Лабораторна робота №5 — Варіант 3: header#featured_container (lpnu.ua)
+   Блочна модель документа (CSS Box Model), позиціонування та стилізація
+   ========================================================================== */
+
+/* Блочна модель border-box для всіх елементів сторінки */
+*,
+*::before,
+*::after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -6,39 +14,82 @@
   padding: 0;
 }
 
+html {
+  /* Базовий розмір 62.5% відповідає 10px, тому 1rem = 10px (як в оригіналі lpnu.ua) */
+  font-size: 62.5%;
+}
+
 body {
   font-family: "Roboto", Arial, sans-serif;
-  background-color: #ffffff;
-  padding: 20px 0;
+  font-size: 1.6rem;
+  background-color: #f4f4f4;
+  color: #333333;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
-.container {
-  width: 100%;
-  max-width: 1170px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
+/* ==========================================================================
+   Секція #featured_container (Точне відтворення оригінального блоку lpnu.ua)
+   ========================================================================== */
 
 #featured_container {
   display: block;
   width: 100%;
+  background-color: #C2C2C2;
+  position: relative;
+}
+
+/* Верхній градієнтний розділювач висотою 2px */
+#featured_container::before {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-image: linear-gradient(to right, #979797 0%, #C2C2C2 50%, #979797 100%);
+  background-image: -webkit-linear-gradient(left, #979797 0%, #C2C2C2 50%, #979797 100%);
+}
+
+/* Контейнер сітки з адаптивною фіксацією ширини (Bootstrap 3) */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 30px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
 }
 
 .views-view-grid {
   width: 100%;
 }
 
+/* Рядок сітки новин */
 .row {
   display: flex;
   flex-wrap: wrap;
   margin-left: -15px;
   margin-right: -15px;
-  margin-bottom: 30px;
 }
 
+/* Колонки сітки 2x2 */
 .views-col {
   width: 50%;
   padding-left: 15px;
@@ -46,71 +97,149 @@ body {
   position: relative;
 }
 
-@media (max-width: 768px) {
-  .views-col {
-    width: 100%;
-    margin-bottom: 20px;
-  }
+/* Картка новини: position: relative створює контекст позиціонування */
+#featured_container .col-sm-6 div,
+.views-col > div {
+  position: relative;
+  margin-bottom: 3rem; /* 30px відступ між картками */
 }
 
-.views-col > div > span > a {
+/* Посилання картки новин */
+#featured_container a:link,
+#featured_container a:visited,
+#featured_container a:hover,
+#featured_container a:active {
   display: block;
   position: relative;
-  overflow: hidden;
   text-decoration: none;
-  background-color: #000000;
-  line-height: 0;
+  color: #ffffff;
+  transition: color 3s ease-out;
 }
 
-.img-responsive {
+/* Зображення новини: aspect ratio 2:1 (720x360), базова прозорість 0.85 */
+#featured_container img.img-responsive {
   display: block;
   width: 100%;
   height: auto;
   aspect-ratio: 2 / 1;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  opacity: 0.85;
+  transition: opacity 1s ease-out;
 }
 
-.views-col a:hover .img-responsive {
-  transform: scale(1.02);
+/* При наведенні курсору фотографія стає на 100% чіткою */
+#featured_container a:hover img.img-responsive,
+#featured_container a:active img.img-responsive {
+  opacity: 1;
 }
 
-.shadow_featured {
-  position: absolute;
-  top: 0;
+/* Біла градієнтна тінь-затемнення знизу вгору (точно за lpnu.ua) */
+#featured_container .shadow_featured {
+  position: absolute !important;
+  margin-bottom: 0 !important;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.75) 100%);
+  min-height: 75%;
+  height: 75%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.85) 100%);
+  opacity: 1;
   pointer-events: none;
+  transition: opacity 2s ease-out;
+  z-index: 1;
 }
 
-.views-col h2 {
+/* При наведенні біле затемнення плавно розсіюється до 0.1 */
+#featured_container a:hover .shadow_featured,
+#featured_container a:active .shadow_featured {
+  opacity: 0.1;
+}
+
+/* Заголовок новини */
+#featured_container h2 {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 30px;
   margin: 0;
+  padding: 30px;
+  border-bottom: 2px solid #ffffff;
+  font-family: "Roboto Condensed", Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2rem;
+  line-height: 1.35;
   z-index: 2;
-  line-height: normal;
-  border: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
 }
 
-.views-col h2 span {
-  font-family: "Roboto Condensed", Arial, sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 1.35;
+/* Плашка заголовка: фірмовий глибокий синій колір #252775 */
+#featured_container h2 span {
   color: #ffffff;
-  background-color: #312783;
+  background-color: #252775;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
   display: inline;
+  padding: 2px 4px;
   word-break: break-word;
-  transition: background-color 0.2s ease;
+  transition: background-color 2s ease-out;
 }
 
-.views-col a:hover h2 span {
-  background-color: #1f185c;
+/* При наведенні курсору колір плашки змінюється на фірмовий блакитний #00A1E4 */
+#featured_container a:hover h2 span,
+#featured_container a:active h2 span {
+  background-color: #00A1E4;
+}
+
+/* ==========================================================================
+   Адаптивні медіа-запити (за оригінальними брейкпоінтами lpnu.ua)
+   ========================================================================== */
+
+/* Мобільні екрани (до 768px): сітка 1 колонка */
+@media (max-width: 767px) {
+  .views-col {
+    width: 100%;
+  }
+
+  .container {
+    padding-top: 15px;
+  }
+}
+
+/* Екрани менше 480px */
+@media only screen and (max-width: 479px) {
+  #featured_container h2 {
+    font-size: 1.8rem;
+    padding: 15px;
+  }
+}
+
+/* Екрани від 480px */
+@media only screen and (min-width: 480px) {
+  #featured_container h2 {
+    font-size: 3rem;
+  }
+}
+
+/* Планшети (від 768px) */
+@media only screen and (min-width: 768px) {
+  #featured_container h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Середні екрани (від 992px) */
+@media only screen and (min-width: 992px) {
+  #featured_container h2 {
+    font-size: 2.4rem;
+  }
+}
+
+/* Великі екрани (від 1200px) */
+@media only screen and (min-width: 1200px) {
+  #featured_container h2 {
+    font-size: 3rem;
+  }
 }

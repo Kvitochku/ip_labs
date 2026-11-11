@@ -10,7 +10,7 @@
 }
 
 html {
-  /* Базовий розмір 62.5% відповідає 10px, тому 1rem = 10px (як в оригіналі lpnu.ua) */
+
   font-size: 62.5%;
 }
 
@@ -96,7 +96,6 @@ body {
   margin-bottom: 3rem; 
 }
 
-/* Посилання картки новин */
 #featured_container a:link,
 #featured_container a:visited,
 #featured_container a:hover,

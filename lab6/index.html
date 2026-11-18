@@ -14,7 +14,7 @@
 <!-- Секція 1 -->
 <section id="section-1">
     <h2>Секція 1: Обтікання тексту</h2>
-    <img src="img/image.svg" alt="SVG зображення">
+    <img src="img/image.svg" alt="Декоративне зображення-заглушка">
     <p class="text">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Proin euismod, felis ut porttitor convallis, velit nisi fringilla nunc, nec malesuada libero nulla sit amet neque.
@@ -33,7 +33,7 @@
         Vivamus varius nunc sed fermentum viverra. Mauris suscipit tristique nisl, ut auctor eros hendrerit nec.
         Nullam interdum at lacus nec vehicula. Aliquam posuere risus sit amet malesuada mollis. Donec et ex vel arcu fermentum volutpat.
     </p>
-    <img src="img/image.svg" alt="SVG зображення">
+    <img src="img/image.svg" alt="Декоративне зображення-заглушка">
     <p class="text">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Proin euismod, felis ut porttitor convallis, velit nisi fringilla nunc, nec malesuada libero nulla sit amet neque.
@@ -112,7 +112,7 @@
 <!-- Секція 3 -->
 <section id="section-3">
     <h2>Секція 3: Модальне вікно - email підписка</h2>
-    <button id="subscribe-button">Підписатися</button>
+    <button id="subscribe-button" type="button" aria-controls="modal" aria-expanded="false">Підписатися</button>
     <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer scelerisque magna vel mi vestibulum, quis ultricies ex faucibus.
         Vivamus condimentum mi quis magna vehicula sagittis. Vestibulum scelerisque id eros non lacinia.
@@ -128,12 +128,13 @@
 </section>
 
 <!-- Модальне вікно -->
-<div id="modal" class="hidden">
+<div id="modal" class="hidden" role="dialog" aria-modal="true" aria-label="Підписка на електронну пошту">
     <div class="modal-content">
         <form id="subscribe-form">
             <label for="email">Введіть вашу електронну пошту:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" autocomplete="email" required>
             <button type="submit">Зберегти</button>
+            <p id="subscribe-status" class="form-status" role="status" hidden>Дякуємо! Вашу електронну пошту збережено.</p>
         </form>
     </div>
 </div>
@@ -142,15 +143,41 @@
 <script>
     const subscribeButton = document.getElementById("subscribe-button");
     const modal = document.getElementById("modal");
+    const form = document.getElementById("subscribe-form");
+    const emailInput = document.getElementById("email");
+    const statusMessage = document.getElementById("subscribe-status");
 
-    subscribeButton.addEventListener("click", () => {
+    function openModal() {
+        statusMessage.hidden = true;
         modal.classList.remove("hidden");
-    });
+        subscribeButton.setAttribute("aria-expanded", "true");
+        emailInput.focus();
+    }
+
+    function closeModal() {
+        modal.classList.add("hidden");
+        subscribeButton.setAttribute("aria-expanded", "false");
+        subscribeButton.focus();
+    }
+
+    subscribeButton.addEventListener("click", openModal);
 
     modal.addEventListener("click", (event) => {
         if (event.target === modal) {
-            modal.classList.add("hidden");
+            closeModal();
         }
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !modal.classList.contains("hidden")) {
+            closeModal();
+        }
+    });
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        form.reset();
+        statusMessage.hidden = false;
     });
 </script>
 </body>

@@ -15,6 +15,11 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Прибираємо стандартний відступ h1, щоб висота header відповідала top у h2 */
+header h1 {
+    margin: 0;
+}
+
 section {
     padding: 20px;
 }
@@ -29,6 +34,7 @@ h2 {
     border-bottom: 1px solid #ddd;
 }
 
+/* Секція 1: обтікання зображень текстом */
 #section-1 img {
     float: left;
     margin-right: 20px;
@@ -44,12 +50,14 @@ h2 {
     clear: both;
 }
 
+/* Секція 2: багатоколонковий текст */
 .multicolumn-text {
     column-width: 300px;
     column-gap: 20px;
-    column-count: 3;
+    column-count: 2; /* текст у 2 колонки */
 }
 
+/* Секція 3: кнопка та модальне вікно */
 #subscribe-button {
     padding: 10px 20px;
     font-size: 16px;
@@ -104,4 +112,42 @@ button[type="submit"] {
     color: white;
     border: none;
     cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.form-status {
+    margin: 12px 0 0;
+    color: #2e7d32;
+    font-size: 14px;
+}
+
+/* Адаптивність для вузьких екранів */
+@media (max-width: 600px) {
+    #section-1 img {
+        float: none;
+        display: block;
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+        margin: 0 auto 20px;
+    }
+
+    .modal-content {
+        width: calc(100% - 40px);
+        height: auto;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        top: 48px;
+    }
 }

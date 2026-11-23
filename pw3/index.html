@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Trivia</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#trivia">Trivia</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#scores">Scores</a></li>
+                <li><a href="#subscribe">Subscribe</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h1>Welcome to World Trivia!</h1>
+            <p>World Trivia is your ultimate destination for fun facts, brain teasers, and trivia challenges from around the globe. Test your knowledge across various categories, compete with players worldwide, and discover fascinating things you never knew. Whether you are a casual learner or a trivia champion, there is something here for everyone.</p>
+        </section>
+
+        <section id="trivia">
+            <h2>Fun Trivia Facts</h2>
+            <div class="trivia-block">
+                <img src="https://placehold.co/150x100/e74c3c/ffffff?text=Monopoly" alt="Monopoly board game illustration" class="trivia-img">
+                <p>Did you know? The longest game of Monopoly lasted 70 days. That is over two months of rolling dice, buying properties, and going to jail!</p>
+            </div>
+            <div class="trivia-block">
+                <img src="https://placehold.co/150x100/3498db/ffffff?text=Quiz" alt="Quiz origin illustration" class="trivia-img">
+                <p>The word "quiz" was allegedly invented in 1791 in Dublin. A theater manager bet he could introduce a new word into the English language within 48 hours.</p>
+            </div>
+            <div class="trivia-block">
+                <img src="https://placehold.co/150x100/2ecc71/ffffff?text=Flamingos" alt="Flamingos illustration" class="trivia-img">
+                <p>A group of flamingos is called a "flamboyance." These elegant pink birds certainly live up to their collective name!</p>
+            </div>
+        </section>
+
+        <section id="categories">
+            <h2>Trivia Categories</h2>
+            <ul>
+                <li><a href="#">Science</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="#">Geography</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Entertainment</a></li>
+                <li><a href="#">Technology</a></li>
+            </ul>
+        </section>
+
+        <section id="scores">
+            <h2>Top Scores</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Score</th>
+                        <th>Country</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Alice</td>
+                        <td>9800</td>
+                        <td>USA</td>
+                        <td>Science</td>
+                        <td>2025-10-01</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Bob</td>
+                        <td>9500</td>
+                        <td>UK</td>
+                        <td>History</td>
+                        <td>2025-09-28</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Carlos</td>
+                        <td>9200</td>
+                        <td>Spain</td>
+                        <td>Geography</td>
+                        <td>2025-09-25</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Diana</td>
+                        <td>8900</td>
+                        <td>Germany</td>
+                        <td>Entertainment</td>
+                        <td>2025-09-20</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Emir</td>
+                        <td>8700</td>
+                        <td>Turkey</td>
+                        <td>Technology</td>
+                        <td>2025-09-15</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="subscribe">
+            <h2>Stay Updated</h2>
+            <button class="subscribe-btn" aria-label="Subscribe to Puzzle of the Day">Subscribe to Puzzle of the Day</button>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Have a question, suggestion, or want to submit your own trivia? Fill out the form below and we will get back to you as soon as possible.</p>
+            <form action="#" method="post">
+                <label for="contact-name">Name</label>
+                <input type="text" id="contact-name" name="name" required>
+
+                <label for="contact-email">Email</label>
+                <input type="email" id="contact-email" name="email" required>
+
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" name="message" required></textarea>
+
+                <button type="submit" aria-label="Send message">Send</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 World Trivia. All rights reserved.</p>
+    </footer>
+</body>
+</html>

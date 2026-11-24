@@ -1,4 +1,3 @@
-/* Базове скидання та налаштування шрифту як на lpnu.ua */
 html {
   font-size: 62.5%;
 }
@@ -34,9 +33,6 @@ a:active {
   transition: color 0.5s ease-out;
 }
 
-/* =========================================================
-   HEADER: header#hero_container (Варіант 2 — Flexbox)
-   ========================================================= */
 header#hero_container,
 header#hero_container .region-hero {
   display: flex;
@@ -102,7 +98,6 @@ header#hero_container .region-hero {
   transition: color 3s ease-out;
 }
 
-/* Блок швидких посилань #block-lpnushortcutstop4 (Flexbox) */
 #block-lpnushortcutstop4 {
   position: relative;
   background: rgb(46, 49, 146);
@@ -134,7 +129,6 @@ header#hero_container .region-hero {
   margin: 0;
 }
 
-/* Mobile (до 767px): 2 колонки x 2 рядки (як col-xs-6 на lpnu.ua) */
 .shortcut-link {
   flex: 1 1 50%;
   display: flex;
@@ -190,9 +184,6 @@ header#hero_container .region-hero {
   transition: color 3s ease-out;
 }
 
-/* =========================================================
-   MAIN: div.main-container — «Новини університету» (CSS Grid)
-   ========================================================= */
 .main-container {
   max-width: 1170px;
   margin: 0 auto;
@@ -223,7 +214,6 @@ header#hero_container .region-hero {
   transition: color 2s ease-out, border-bottom 2s ease-out;
 }
 
-/* Mobile (до 767px): 1 колонка */
 .news-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -291,9 +281,6 @@ header#hero_container .region-hero {
   padding: 0 15px 15px 15px;
 }
 
-/* =========================================================
-   МЕДІА-ЗАПИТИ ДЛЯ HEADER (#hero_container) — 1в1 як на lpnu.ua
-   ========================================================= */
 @media only screen and (min-width: 480px) {
   #hero {
     min-height: 300px;
@@ -440,14 +427,6 @@ header#hero_container .region-hero {
   }
 }
 
-/* =========================================================
-   МЕДІА-ЗАПИТИ ДЛЯ НОВИН (3 брейкпоінти)
-   - Mobile: до 767px — 1 колонка (базові стилі вище)
-   - Tablet: 768px – 1023px — 2 колонки
-   - Desktop: 1024px і більше — 4 колонки
-   ========================================================= */
-
-/* Tablet: 768px – 1023px */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   #block-views-block-front-page-news-block-3 h2 {
     font-size: 2.4rem;
@@ -458,7 +437,6 @@ header#hero_container .region-hero {
   }
 }
 
-/* Desktop: 1024px і більше */
 @media only screen and (min-width: 1024px) {
   #block-views-block-front-page-news-block-3 h2 {
     font-size: 2.8rem;

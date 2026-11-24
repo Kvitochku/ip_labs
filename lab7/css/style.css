@@ -1,259 +1,474 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Базове скидання та налаштування шрифту як на lpnu.ua */
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    color: #333;
-    background-color: #f4f4f4;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  margin: 0;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.42857143;
+  color: #333333;
+  background-color: #ffffff;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
 }
 
-ul {
-    list-style: none;
+a:link,
+a:visited {
+  color: #0076a8;
+  transition: color 0.5s ease-out;
 }
 
-header#events_container {
-    background-color: #2d2d7f;
-    color: #fff;
+a:hover,
+a:active {
+  color: #00a1e4;
+  transition: color 0.5s ease-out;
 }
 
-.header-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+/* =========================================================
+   HEADER: header#hero_container (Варіант 2 — Flexbox)
+   ========================================================= */
+header#hero_container,
+header#hero_container .region-hero {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: rgb(46, 49, 146);
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+#hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  min-height: 200px;
+  background: rgb(46, 49, 146) url("../img/hero-img2157.jpg") no-repeat center top;
+  background-size: cover;
+  font-family: "Roboto Condensed", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
 }
 
-.logo-icon {
-    background-color: #ffc107;
-    color: #2d2d7f;
-    font-weight: 700;
-    font-size: 1.3rem;
-    width: 46px;
-    height: 46px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+#hero .shadow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 120px;
+  background: linear-gradient(to bottom, rgba(46, 49, 146, 0), rgba(46, 49, 146, 1));
+  z-index: 1;
 }
 
-.logo-text {
-    font-size: 0.85rem;
-    font-weight: 500;
-    line-height: 1.3;
+#hero .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
-header#events_container nav ul {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+#hero h2 {
+  text-align: center;
+  margin: 0 0 2.4rem 0;
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 1.1;
 }
 
-header#events_container nav ul li a {
-    display: block;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.85);
-    transition: color 0.3s ease, background-color 0.3s ease;
+#hero a:link,
+#hero a:visited {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 3s ease-out;
 }
 
-header#events_container nav ul li a:hover {
-    color: #fff;
-    background-color: rgba(255, 255, 255, 0.15);
+#hero a:hover,
+#hero a:active {
+  color: #00a1e4;
+  text-decoration: none;
+  transition: color 3s ease-out;
 }
 
-header#events_container nav ul li a.active {
-    color: #ffc107;
-    background-color: rgba(255, 255, 255, 0.1);
+/* Блок швидких посилань #block-lpnushortcutstop4 (Flexbox) */
+#block-lpnushortcutstop4 {
+  position: relative;
+  background: rgb(46, 49, 146);
+  width: 100%;
+  font-family: "Roboto Condensed", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
 }
 
+#block-lpnushortcutstop4::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #2e3192 0%, #ffffff 50%, #2e3192 100%);
+}
+
+#block-lpnushortcutstop4 .container-fluid {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#block-lpnushortcutstop4 .row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0;
+}
+
+/* Mobile (до 767px): 2 колонки x 2 рядки (як col-xs-6 на lpnu.ua) */
+.shortcut-link {
+  flex: 1 1 50%;
+  display: flex;
+}
+
+.shortcut-link > div {
+  width: 100%;
+  min-height: 104px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+}
+
+.shortcut-1,
+.shortcut-4 {
+  background: #252775;
+}
+
+.shortcut-2,
+.shortcut-3 {
+  background: rgb(46, 49, 146);
+}
+
+#block-lpnushortcutstop4 h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: center;
+}
+
+#block-lpnushortcutstop4 h2 svg {
+  display: inline-block;
+  vertical-align: -0.125em;
+  width: 1.125em;
+  height: 1em;
+  color: #00a1e4;
+  margin-right: 0.5rem;
+}
+
+#block-lpnushortcutstop4 a:link,
+#block-lpnushortcutstop4 a:visited {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 3s ease-out;
+}
+
+#block-lpnushortcutstop4 a:hover,
+#block-lpnushortcutstop4 a:active {
+  color: #00a1e4;
+  text-decoration: none;
+  transition: color 3s ease-out;
+}
+
+/* =========================================================
+   MAIN: div.main-container — «Новини університету» (CSS Grid)
+   ========================================================= */
 .main-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 30px 20px;
-    flex: 1;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px 40px;
 }
 
-.section-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #2d2d7f;
-    margin-bottom: 30px;
-    position: relative;
-    padding-bottom: 12px;
+#block-views-block-front-page-news-block-3 .view-header {
+  text-align: center;
 }
 
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 60px;
-    height: 4px;
-    background-color: #ffc107;
-    border-radius: 2px;
+#block-views-block-front-page-news-block-3 h2 {
+  font-family: "Roboto Condensed", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin: 30px 0;
 }
 
+#block-views-block-front-page-news-block-3 h2 a:link,
+#block-views-block-front-page-news-block-3 h2 a:visited {
+  border-bottom: 2px solid #0076a8;
+  transition: color 2s ease-out, border-bottom 2s ease-out;
+}
+
+#block-views-block-front-page-news-block-3 h2 a:hover,
+#block-views-block-front-page-news-block-3 h2 a:active {
+  border-bottom: 2px solid #00a1e4;
+  transition: color 2s ease-out, border-bottom 2s ease-out;
+}
+
+/* Mobile (до 767px): 1 колонка */
 .news-grid {
-    display: grid;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  align-items: stretch;
+}
+
+.news-col {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-col > a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.news_teaser {
+  color: #444444;
+  font-family: "Roboto Condensed", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.news_teaser img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  margin-bottom: -12px;
+  border-bottom: 2px solid #757575;
+  position: relative;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 2s ease-out;
+}
+
+.news-col a:hover .news_teaser img,
+.news-col a:active .news_teaser img {
+  opacity: 0.65;
+  transition: opacity 2s ease-out;
+}
+
+.news_teaser span {
+  display: inline-block;
+  background: #757575;
+  color: #ffffff;
+  padding: 5px 7px;
+  margin-left: 15px;
+  position: relative;
+  z-index: 2;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+#block-views-block-front-page-news-block-3 h3 {
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  font-weight: bold;
+  margin: 15px 0 30px 0;
+  padding: 0 15px 15px 15px;
+}
+
+/* =========================================================
+   МЕДІА-ЗАПИТИ ДЛЯ HEADER (#hero_container) — 1в1 як на lpnu.ua
+   ========================================================= */
+@media only screen and (min-width: 480px) {
+  #hero {
+    min-height: 300px;
+  }
+
+  #hero .shadow {
+    min-height: 160px;
+  }
+
+  #hero h2 {
+    margin: 0 0 3rem 0;
+    font-size: 3.4rem;
+  }
+
+  .shortcut-link > div {
+    min-height: 106px;
+  }
+
+  #block-lpnushortcutstop4 h2 {
+    font-size: 1.7rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #hero {
+    min-height: 400px;
+  }
+
+  #hero .shadow {
+    min-height: 215px;
+  }
+
+  #hero .container,
+  .main-container {
+    max-width: 750px;
+  }
+
+  #hero h2 {
+    font-size: 4rem;
+    margin: 0 0 3rem 0;
+  }
+
+  #block-lpnushortcutstop4 .row {
+    flex-wrap: nowrap;
+  }
+
+  .shortcut-link {
+    flex: 1 1 25%;
+  }
+
+  .shortcut-link > div {
+    min-height: 110px;
+  }
+
+  #block-lpnushortcutstop4 h2 {
+    font-size: 1.5rem;
+  }
+
+  .shortcut-1,
+  .shortcut-3 {
+    background: none;
+  }
+
+  .shortcut-2,
+  .shortcut-4 {
+    background: #252775;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  #hero {
+    min-height: 500px;
+  }
+
+  #hero .shadow {
+    min-height: 270px;
+  }
+
+  #hero .container,
+  .main-container {
+    max-width: 970px;
+  }
+
+  #hero h2 {
+    margin: 0 0 4rem 0;
+  }
+
+  .shortcut-link > div {
+    min-height: 124px;
+  }
+
+  #block-lpnushortcutstop4 h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #hero {
+    min-height: 550px;
+  }
+
+  #hero .shadow {
+    min-height: 295px;
+  }
+
+  #hero .container,
+  .main-container {
+    max-width: 1170px;
+  }
+
+  #hero h2 {
+    font-size: 5rem;
+    margin: 0 0 5rem 0;
+  }
+
+  .shortcut-link > div {
+    min-height: 134px;
+  }
+
+  #block-lpnushortcutstop4 h2 {
+    font-size: 2.1rem;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  #hero {
+    min-height: 650px;
+  }
+
+  #hero .shadow {
+    min-height: 350px;
+  }
+
+  #hero h2 {
+    margin: 0 0 6.5rem 0;
+  }
+
+  .shortcut-link > div {
+    min-height: 120px;
+  }
+
+  #block-lpnushortcutstop4 h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* =========================================================
+   МЕДІА-ЗАПИТИ ДЛЯ НОВИН (3 брейкпоінти)
+   - Mobile: до 767px — 1 колонка (базові стилі вище)
+   - Tablet: 768px – 1023px — 2 колонки
+   - Desktop: 1024px і більше — 4 колонки
+   ========================================================= */
+
+/* Tablet: 768px – 1023px */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  #block-views-block-front-page-news-block-3 h2 {
+    font-size: 2.4rem;
+  }
+
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop: 1024px і більше */
+@media only screen and (min-width: 1024px) {
+  #block-views-block-front-page-news-block-3 h2 {
+    font-size: 2.8rem;
+  }
+
+  #block-views-block-front-page-news-block-3 h3 {
+    margin: 20px 0 30px 0;
+  }
+
+  .news-grid {
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.news-card {
-    background-color: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fadeInUp 0.6s ease both;
-    display: flex;
-    flex-direction: column;
-}
-
-.news-card:nth-child(1) { animation-delay: 0.05s; }
-.news-card:nth-child(2) { animation-delay: 0.1s; }
-.news-card:nth-child(3) { animation-delay: 0.15s; }
-.news-card:nth-child(4) { animation-delay: 0.2s; }
-.news-card:nth-child(5) { animation-delay: 0.25s; }
-.news-card:nth-child(6) { animation-delay: 0.3s; }
-.news-card:nth-child(7) { animation-delay: 0.35s; }
-.news-card:nth-child(8) { animation-delay: 0.4s; }
-
-.news-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
-}
-
-.news-image {
-    width: 100%;
-    height: 180px;
-    transition: opacity 0.3s ease;
-}
-
-.news-card:hover .news-image {
-    opacity: 0.9;
-}
-
-.news-body {
-    padding: 18px 20px 22px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.news-date {
-    font-size: 0.8rem;
-    color: #888;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 8px;
-}
-
-.news-body h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #2d2d7f;
-    margin-bottom: 10px;
-    line-height: 1.4;
-    transition: color 0.3s ease;
-}
-
-.news-card:hover .news-body h3 {
-    color: #3f3fbf;
-}
-
-.news-body p {
-    font-size: 0.88rem;
-    color: #666;
-    line-height: 1.55;
-    flex: 1;
-}
-
-footer {
-    background-color: #2d2d7f;
-    color: rgba(255, 255, 255, 0.75);
-    text-align: center;
-    padding: 22px 20px;
-    font-size: 0.85rem;
-    margin-top: auto;
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-    .news-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 767px) {
-    .header-inner {
-        flex-direction: column;
-        padding: 14px 20px;
-        gap: 12px;
-    }
-
-    header#events_container nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 4px;
-    }
-
-    header#events_container nav ul li a {
-        padding: 6px 12px;
-        font-size: 0.88rem;
-    }
-
-    .section-title {
-        font-size: 1.5rem;
-    }
-
-    .news-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-
-    .news-image {
-        height: 160px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .news-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
+  }
 }

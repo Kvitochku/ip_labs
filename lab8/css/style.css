@@ -1,0 +1,454 @@
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.42857143;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+a:link, a:visited {
+  color: #0076a8;
+  transition: color 0.5s ease-out;
+}
+a:hover, a:active {
+  color: #00a1e4;
+  transition: color 0.5s ease-out;
+}
+
+header#hero_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #2e3192;
+}
+header#hero_container .region-hero {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #2e3192;
+}
+
+#hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  min-height: 200px;
+  background: #2e3192 url("../img/hero-img2157.jpg") no-repeat center top;
+  background-size: cover;
+  font-family: "Roboto Condensed", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+#hero .shadow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 120px;
+  background: linear-gradient(to bottom, rgba(46, 49, 146, 0), rgb(46, 49, 146));
+  z-index: 1;
+}
+@media only screen and (min-width: 480px) {
+  #hero .shadow {
+    min-height: 160px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #hero .shadow {
+    min-height: 215px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #hero .shadow {
+    min-height: 270px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #hero .shadow {
+    min-height: 295px;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  #hero .shadow {
+    min-height: 350px;
+  }
+}
+#hero .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+@media only screen and (min-width: 768px) {
+  #hero .container {
+    max-width: 750px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #hero .container {
+    max-width: 970px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #hero .container {
+    max-width: 1170px;
+  }
+}
+#hero h2 {
+  text-align: center;
+  margin: 0 0 2.4rem 0;
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 1.1;
+}
+@media only screen and (min-width: 480px) {
+  #hero h2 {
+    margin: 0 0 3rem 0;
+    font-size: 3.4rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #hero h2 {
+    font-size: 4rem;
+    margin: 0 0 3rem 0;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #hero h2 {
+    margin: 0 0 4rem 0;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #hero h2 {
+    font-size: 5rem;
+    margin: 0 0 5rem 0;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  #hero h2 {
+    margin: 0 0 6.5rem 0;
+  }
+}
+#hero a:link, #hero a:visited {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 3s ease-out;
+}
+#hero a:hover, #hero a:active {
+  color: #00a1e4;
+  text-decoration: none;
+  transition: color 3s ease-out;
+}
+@media only screen and (min-width: 480px) {
+  #hero {
+    min-height: 300px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #hero {
+    min-height: 400px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #hero {
+    min-height: 500px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #hero {
+    min-height: 550px;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  #hero {
+    min-height: 650px;
+  }
+}
+
+#block-lpnushortcutstop4 {
+  position: relative;
+  background: #2e3192;
+  width: 100%;
+  font-family: "Roboto Condensed", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+#block-lpnushortcutstop4::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #2e3192 0%, #ffffff 50%, #2e3192 100%);
+}
+#block-lpnushortcutstop4 .container-fluid {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+#block-lpnushortcutstop4 .row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0;
+}
+@media only screen and (min-width: 768px) {
+  #block-lpnushortcutstop4 .row {
+    flex-wrap: nowrap;
+  }
+}
+#block-lpnushortcutstop4 .shortcut-link {
+  flex: 1 1 50%;
+  display: flex;
+}
+@media only screen and (min-width: 768px) {
+  #block-lpnushortcutstop4 .shortcut-link {
+    flex: 1 1 25%;
+  }
+}
+#block-lpnushortcutstop4 .shortcut-link > div {
+  width: 100%;
+  min-height: 104px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+}
+@media only screen and (min-width: 480px) {
+  #block-lpnushortcutstop4 .shortcut-link > div {
+    min-height: 106px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #block-lpnushortcutstop4 .shortcut-link > div {
+    min-height: 110px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #block-lpnushortcutstop4 .shortcut-link > div {
+    min-height: 124px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #block-lpnushortcutstop4 .shortcut-link > div {
+    min-height: 134px;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  #block-lpnushortcutstop4 .shortcut-link > div {
+    min-height: 120px;
+  }
+}
+#block-lpnushortcutstop4 .shortcut-1,
+#block-lpnushortcutstop4 .shortcut-4 {
+  background: #252775;
+}
+#block-lpnushortcutstop4 .shortcut-2,
+#block-lpnushortcutstop4 .shortcut-3 {
+  background: #2e3192;
+}
+@media only screen and (min-width: 768px) {
+  #block-lpnushortcutstop4 .shortcut-1,
+  #block-lpnushortcutstop4 .shortcut-3 {
+    background: none;
+  }
+  #block-lpnushortcutstop4 .shortcut-2,
+  #block-lpnushortcutstop4 .shortcut-4 {
+    background: #252775;
+  }
+}
+#block-lpnushortcutstop4 h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: center;
+}
+@media only screen and (min-width: 480px) {
+  #block-lpnushortcutstop4 h2 {
+    font-size: 1.7rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #block-lpnushortcutstop4 h2 {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #block-lpnushortcutstop4 h2 {
+    font-size: 1.8rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #block-lpnushortcutstop4 h2 {
+    font-size: 2.1rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  #block-lpnushortcutstop4 h2 {
+    font-size: 2.2rem;
+  }
+}
+#block-lpnushortcutstop4 h2 svg {
+  display: inline-block;
+  vertical-align: -0.125em;
+  width: 1.125em;
+  height: 1em;
+  color: #00a1e4;
+  margin-right: 0.5rem;
+}
+#block-lpnushortcutstop4 a:link, #block-lpnushortcutstop4 a:visited {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 3s ease-out;
+}
+#block-lpnushortcutstop4 a:hover, #block-lpnushortcutstop4 a:active {
+  color: #00a1e4;
+  text-decoration: none;
+  transition: color 3s ease-out;
+}
+
+.main-container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px 40px;
+}
+@media only screen and (min-width: 768px) {
+  .main-container {
+    max-width: 750px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .main-container {
+    max-width: 970px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .main-container {
+    max-width: 1170px;
+  }
+}
+
+#block-views-block-front-page-news-block-3 .view-header {
+  text-align: center;
+}
+#block-views-block-front-page-news-block-3 h2 {
+  font-family: "Roboto Condensed", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin: 30px 0;
+}
+@media only screen and (min-width: 768px) {
+  #block-views-block-front-page-news-block-3 h2 {
+    font-size: 2.4rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #block-views-block-front-page-news-block-3 h2 {
+    font-size: 2.8rem;
+  }
+}
+#block-views-block-front-page-news-block-3 h2 a:link, #block-views-block-front-page-news-block-3 h2 a:visited {
+  border-bottom: 2px solid #0076a8;
+  transition: color 2s ease-out, border-bottom 2s ease-out;
+}
+#block-views-block-front-page-news-block-3 h2 a:hover, #block-views-block-front-page-news-block-3 h2 a:active {
+  border-bottom: 2px solid #00a1e4;
+  transition: color 2s ease-out, border-bottom 2s ease-out;
+}
+#block-views-block-front-page-news-block-3 .news-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  align-items: stretch;
+}
+@media only screen and (min-width: 768px) {
+  #block-views-block-front-page-news-block-3 .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #block-views-block-front-page-news-block-3 .news-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+#block-views-block-front-page-news-block-3 .news-col {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+}
+#block-views-block-front-page-news-block-3 .news-col > a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+#block-views-block-front-page-news-block-3 .news-col > a:hover .news_teaser img, #block-views-block-front-page-news-block-3 .news-col > a:active .news_teaser img {
+  opacity: 0.65;
+  transition: opacity 2s ease-out;
+}
+#block-views-block-front-page-news-block-3 .news_teaser {
+  color: #444444;
+  font-family: "Roboto Condensed", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+#block-views-block-front-page-news-block-3 .news_teaser img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  margin-bottom: -12px;
+  border-bottom: 2px solid #757575;
+  position: relative;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 2s ease-out;
+}
+#block-views-block-front-page-news-block-3 .news_teaser span {
+  display: inline-block;
+  background: #757575;
+  color: #ffffff;
+  padding: 5px 7px;
+  margin-left: 15px;
+  position: relative;
+  z-index: 2;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+#block-views-block-front-page-news-block-3 h3 {
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  font-weight: bold;
+  margin: 15px 0 30px 0;
+  padding: 0 15px 15px 15px;
+}
+@media only screen and (min-width: 1024px) {
+  #block-views-block-front-page-news-block-3 h3 {
+    margin: 20px 0 30px 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

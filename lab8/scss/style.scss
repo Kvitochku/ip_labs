@@ -1,0 +1,514 @@
+@use "sass:map";
+
+$primary-color: #2e3192;
+$secondary-color: #252775;
+$accent-color: #00a1e4;
+$link-color: #0076a8;
+$text-color: #333333;
+$text-muted-color: #444444;
+$white-color: #ffffff;
+$card-bg: #f6f6f6;
+$badge-bg: #757575;
+
+$font-main: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-condensed: "Roboto Condensed", "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$font-size-base: 1.6rem;
+$font-size-badge: 1.3rem;
+$font-size-shortcut: 1.5rem;
+$font-size-shortcut-sm: 1.7rem;
+$font-size-shortcut-md: 1.8rem;
+$font-size-shortcut-lg: 2.1rem;
+$font-size-shortcut-xl: 2.2rem;
+$font-size-news-title: 1.8rem;
+$font-size-section-title: 2.2rem;
+$font-size-section-title-tablet: 2.4rem;
+$font-size-section-title-desktop: 2.8rem;
+$font-size-hero-xs: 2.2rem;
+$font-size-hero-sm: 3.4rem;
+$font-size-hero-md: 4rem;
+$font-size-hero-lg: 5rem;
+
+$breakpoints: (
+  small: 480px,
+  mobile: 576px,
+  tablet: 768px,
+  medium: 992px,
+  desktop: 1024px,
+  large: 1200px,
+  xlarge: 1600px
+);
+
+@mixin respond-to($breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
+    @media only screen and (min-width: map.get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}
+
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $font-main;
+  font-size: $font-size-base;
+  line-height: 1.42857143;
+  color: $text-color;
+  background-color: $white-color;
+}
+
+a {
+  text-decoration: none;
+
+  &:link,
+  &:visited {
+    color: $link-color;
+    transition: color 0.5s ease-out;
+  }
+
+  &:hover,
+  &:active {
+    color: $accent-color;
+    transition: color 0.5s ease-out;
+  }
+}
+
+header#hero_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: $primary-color;
+
+  .region-hero {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: $primary-color;
+  }
+}
+
+#hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+  min-height: 200px;
+  background: $primary-color url("../img/hero-img2157.jpg") no-repeat center top;
+  background-size: cover;
+  font-family: $font-condensed;
+  font-style: normal;
+  font-weight: normal;
+
+  .shadow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-height: 120px;
+    background: linear-gradient(to bottom, rgba(46, 49, 146, 0), rgba(46, 49, 146, 1));
+    z-index: 1;
+
+    @include respond-to(small) {
+      min-height: 160px;
+    }
+
+    @include respond-to(tablet) {
+      min-height: 215px;
+    }
+
+    @include respond-to(medium) {
+      min-height: 270px;
+    }
+
+    @include respond-to(large) {
+      min-height: 295px;
+    }
+
+    @include respond-to(xlarge) {
+      min-height: 350px;
+    }
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+
+    @include respond-to(tablet) {
+      max-width: 750px;
+    }
+
+    @include respond-to(medium) {
+      max-width: 970px;
+    }
+
+    @include respond-to(large) {
+      max-width: 1170px;
+    }
+  }
+
+  h2 {
+    text-align: center;
+    margin: 0 0 2.4rem 0;
+    font-size: $font-size-hero-xs;
+    font-weight: 400;
+    line-height: 1.1;
+
+    @include respond-to(small) {
+      margin: 0 0 3rem 0;
+      font-size: $font-size-hero-sm;
+    }
+
+    @include respond-to(tablet) {
+      font-size: $font-size-hero-md;
+      margin: 0 0 3rem 0;
+    }
+
+    @include respond-to(medium) {
+      margin: 0 0 4rem 0;
+    }
+
+    @include respond-to(large) {
+      font-size: $font-size-hero-lg;
+      margin: 0 0 5rem 0;
+    }
+
+    @include respond-to(xlarge) {
+      margin: 0 0 6.5rem 0;
+    }
+  }
+
+  a {
+    &:link,
+    &:visited {
+      color: $white-color;
+      text-decoration: none;
+      transition: color 3s ease-out;
+    }
+
+    &:hover,
+    &:active {
+      color: $accent-color;
+      text-decoration: none;
+      transition: color 3s ease-out;
+    }
+  }
+
+  @include respond-to(small) {
+    min-height: 300px;
+  }
+
+  @include respond-to(tablet) {
+    min-height: 400px;
+  }
+
+  @include respond-to(medium) {
+    min-height: 500px;
+  }
+
+  @include respond-to(large) {
+    min-height: 550px;
+  }
+
+  @include respond-to(xlarge) {
+    min-height: 650px;
+  }
+}
+
+#block-lpnushortcutstop4 {
+  position: relative;
+  background: $primary-color;
+  width: 100%;
+  font-family: $font-condensed;
+  font-style: normal;
+  font-weight: normal;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, $primary-color 0%, $white-color 50%, $primary-color 100%);
+  }
+
+  .container-fluid {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+
+    @include respond-to(tablet) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  .shortcut-link {
+    flex: 1 1 50%;
+    display: flex;
+
+    @include respond-to(tablet) {
+      flex: 1 1 25%;
+    }
+
+    > div {
+      width: 100%;
+      min-height: 104px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 15px;
+
+      @include respond-to(small) {
+        min-height: 106px;
+      }
+
+      @include respond-to(tablet) {
+        min-height: 110px;
+      }
+
+      @include respond-to(medium) {
+        min-height: 124px;
+      }
+
+      @include respond-to(large) {
+        min-height: 134px;
+      }
+
+      @include respond-to(xlarge) {
+        min-height: 120px;
+      }
+    }
+  }
+
+  .shortcut-1,
+  .shortcut-4 {
+    background: $secondary-color;
+  }
+
+  .shortcut-2,
+  .shortcut-3 {
+    background: $primary-color;
+  }
+
+  @include respond-to(tablet) {
+    .shortcut-1,
+    .shortcut-3 {
+      background: none;
+    }
+
+    .shortcut-2,
+    .shortcut-4 {
+      background: $secondary-color;
+    }
+  }
+
+  h2 {
+    margin: 0;
+    font-size: $font-size-shortcut;
+    font-weight: 400;
+    line-height: 1.1;
+    text-align: center;
+
+    @include respond-to(small) {
+      font-size: $font-size-shortcut-sm;
+    }
+
+    @include respond-to(tablet) {
+      font-size: $font-size-shortcut;
+    }
+
+    @include respond-to(medium) {
+      font-size: $font-size-shortcut-md;
+    }
+
+    @include respond-to(large) {
+      font-size: $font-size-shortcut-lg;
+    }
+
+    @include respond-to(xlarge) {
+      font-size: $font-size-shortcut-xl;
+    }
+
+    svg {
+      display: inline-block;
+      vertical-align: -0.125em;
+      width: 1.125em;
+      height: 1em;
+      color: $accent-color;
+      margin-right: 0.5rem;
+    }
+  }
+
+  a {
+    &:link,
+    &:visited {
+      color: $white-color;
+      text-decoration: none;
+      transition: color 3s ease-out;
+    }
+
+    &:hover,
+    &:active {
+      color: $accent-color;
+      text-decoration: none;
+      transition: color 3s ease-out;
+    }
+  }
+}
+
+.main-container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px 40px;
+
+  @include respond-to(tablet) {
+    max-width: 750px;
+  }
+
+  @include respond-to(medium) {
+    max-width: 970px;
+  }
+
+  @include respond-to(large) {
+    max-width: 1170px;
+  }
+}
+
+#block-views-block-front-page-news-block-3 {
+  .view-header {
+    text-align: center;
+  }
+
+  h2 {
+    font-family: $font-condensed;
+    font-style: normal;
+    font-size: $font-size-section-title;
+    font-weight: 400;
+    margin: 30px 0;
+
+    @include respond-to(tablet) {
+      font-size: $font-size-section-title-tablet;
+    }
+
+    @include respond-to(desktop) {
+      font-size: $font-size-section-title-desktop;
+    }
+
+    a {
+      &:link,
+      &:visited {
+        border-bottom: 2px solid $link-color;
+        transition: color 2s ease-out, border-bottom 2s ease-out;
+      }
+
+      &:hover,
+      &:active {
+        border-bottom: 2px solid $accent-color;
+        transition: color 2s ease-out, border-bottom 2s ease-out;
+      }
+    }
+  }
+
+  .news-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    align-items: stretch;
+
+    @include respond-to(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to(desktop) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .news-col {
+    background: $card-bg;
+    display: flex;
+    flex-direction: column;
+
+    > a {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+
+      &:hover,
+      &:active {
+        .news_teaser img {
+          opacity: 0.65;
+          transition: opacity 2s ease-out;
+        }
+      }
+    }
+  }
+
+  .news_teaser {
+    color: $text-muted-color;
+    font-family: $font-condensed;
+    font-style: normal;
+    font-weight: normal;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      margin-bottom: -12px;
+      border-bottom: 2px solid $badge-bg;
+      position: relative;
+      z-index: 1;
+      opacity: 1;
+      transition: opacity 2s ease-out;
+    }
+
+    span {
+      display: inline-block;
+      background: $badge-bg;
+      color: $white-color;
+      padding: 5px 7px;
+      margin-left: 15px;
+      position: relative;
+      z-index: 2;
+      font-size: $font-size-badge;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+  }
+
+  h3 {
+    font-size: $font-size-news-title;
+    line-height: 2.1rem;
+    font-weight: bold;
+    margin: 15px 0 30px 0;
+    padding: 0 15px 15px 15px;
+
+    @include respond-to(desktop) {
+      margin: 20px 0 30px 0;
+    }
+  }
+}
